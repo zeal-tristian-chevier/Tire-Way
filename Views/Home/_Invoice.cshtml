@@ -1,0 +1,76 @@
+@model Invoice
+<style>
+    .command-box {
+    position: relative;
+    border: 2px solid black;
+    border-right: 0;
+    width: 70%;
+    height: 40px;
+    margin-top: 2.5rem;
+}
+.row {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+</style>
+<div class="row">
+    <div class="col-lg-12 p-0">
+        <table class="table table-bordered table-striped table-hover mt-3">
+            <thead>
+                <tr class="table-dark" style="text-align: center;">
+                    <th >Ln</th>
+                    <th>Part # / SKU</th>
+                    <th>Name / Description</th>
+                    <th>Loc</th>
+                    <th>Qty</th>
+                    <th>List</th>
+                    <th>Net</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    int i = 1;
+                }
+                @foreach (Tire tire in @Model.InvoiceTires)
+                {
+                    if(tire.Quantity > 0)
+                    {
+                        <tr>
+                        <td>@i</td>
+                        <td>@tire.SKU</td>
+                        <td>@tire.Name</td>
+                        <td>@tire.Location</td>
+                        <td>@tire.Quantity</td>
+                        <td>$@tire.ListPrice</td>
+                        <td>$@tire.ListPrice</td>
+                        </tr>
+                        i +=1;
+                    }
+                }
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8 ps-0">
+        <form asp-controller="Home" asp-action="Command" method="POST" class="align-items-end d-flex"> 
+            <input type="text" name="cmd" class="command-box">
+            <button class="btn btn-warning" style="border-radius: 0; border: 2px solid black;">?</button>
+            <button type="submit" hidden></button>
+        </form>
+    </div>
+    <div class="col-lg-4 d-flex align-items-start flex-column">
+        @{
+            if(Model.Total.HasValue){
+                var Taxes = Model.Total * 0.08;
+                ViewBag.Taxes = Math.Round(Taxes.Value, 2);
+                var Total = (Model.Total + Taxes);
+                ViewBag.Total = Math.Round(Total.Value, 2);
+            }
+            
+        }
+        <h2 class="mt-2">Taxes: $@ViewBag.Taxes</h2>
+        <h2 class="mt-2">Total: $@ViewBag.Total</p>
+    </div>
+</div>

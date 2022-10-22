@@ -1,0 +1,48 @@
+@model Customer
+    <div class="col-lg-3 ms-5">
+        <h1>Add Customer</h1>
+        <form asp-controller="Customers" asp-action="Register" method="POST">
+            <div class="mb-3">
+                <label asp-for="FirstName"></label>
+                <span
+                asp-validation-for="FirstName"
+                class="text-danger font-weight-bold"
+                ></span>
+                <input asp-for="FirstName" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="LastName"></label>
+                <span
+                asp-validation-for="LastName"
+                class="text-danger font-weight-bold"
+                ></span>
+                <input asp-for="LastName" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email"></label>
+                <span
+                asp-validation-for="Email"
+                class="text-danger font-weight-bold"
+                ></span>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Phone"></label>
+                <span
+                asp-validation-for="Phone"
+                class="text-danger font-weight-bold"
+                ></span>
+                <input asp-for="Phone" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="TireSize"></label>
+                <span
+                asp-validation-for="TireSize"
+                class="text-danger font-weight-bold"
+                ></span>
+                <input asp-for="TireSize" class="form-control" />
+            </div>
+
+            <button class="btn btn-outline-primary">Add Customer</button>
+        </form>
+    </div>

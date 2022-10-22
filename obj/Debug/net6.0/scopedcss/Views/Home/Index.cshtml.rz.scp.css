@@ -1,0 +1,11 @@
+.main-box[b-vg6x2smwao] {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 75%;
+}
+.invoice-box[b-vg6x2smwao] {
+    position: relative;
+    border: 4px solid black;
+    height: 70vh;
+}

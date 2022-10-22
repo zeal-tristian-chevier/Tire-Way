@@ -1,0 +1,63 @@
+@model Tire
+<div class="row w-50">
+    <div class="text-center">
+        <h1>Add A Tire</h1>
+    </div>
+        <form asp-controller="Stock" asp-action="New" method="POST">
+        <div class="d-flex gap-5 align-items-center">
+            <div class="mb-3">
+                <label asp-for="Name"></label>
+                <span
+                asp-validation-for="Name"
+                class="text-danger font-weight-bold"
+                ></span>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="TireSize"></label>
+                <span
+                asp-validation-for="TireSize"
+                class="text-danger font-weight-bold"
+                ></span>
+                <input asp-for="TireSize" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="SKU"></label>
+                <span
+                asp-validation-for="SKU"
+                class="text-danger font-weight-bold"
+                ></span>
+                <input asp-for="SKU" class="form-control" />
+            </div>
+        </div>
+        <div class="d-flex gap-5 align-items-center">
+            <div class="mb-3">
+                <label asp-for="Location"></label>
+                <span
+                asp-validation-for="Location"
+                class="text-danger font-weight-bold"
+                ></span>
+                <input asp-for="Location" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="ListPrice"></label>
+                <span
+                asp-validation-for="ListPrice"
+                class="text-danger font-weight-bold"
+                ></span>
+                <input asp-for="ListPrice" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Quantity"></label>
+                <span
+                asp-validation-for="Quantity"
+                class="text-danger font-weight-bold"
+                ></span>
+                <input asp-for="Quantity" class="form-control" />
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-outline-primary">Add Tire</button>
+        </div>
+    </form>
+</div>

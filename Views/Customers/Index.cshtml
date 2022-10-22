@@ -1,0 +1,10 @@
+<div class="main w-100" style="position: absolute; top: 15%;">
+    <div class="row" style="left: 27%; position: relative;">
+        @{
+            SelectCustomer newSelectCustomer = new SelectCustomer();
+        }
+        <partial name="_Existing" model="@newSelectCustomer">
+        @model Customer
+        <partial name="_New">
+    </div>
+</div>

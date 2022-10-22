@@ -1,0 +1,10 @@
+﻿@model ViewModel
+
+<div class="main-box">
+    <div class="invoice-box">
+        <partial name="_Info" model="@Model.currentCustomer"></partial>
+        <partial name="_Invoice" model="@Model.currentInvoice"></partial>
+    </div>
+</div>
+
+

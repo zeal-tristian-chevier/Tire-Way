@@ -1,0 +1,33 @@
+@model Stock
+
+<div class="main" style="position: absolute; top: 15%; left: 36%">
+        @if(@Model.StockedTires.Count > 0){
+        @foreach (Tire tire in @Model.StockedTires)
+        {
+            if(tire.Quantity > 0){
+            <div class="row rounded p-3 mb-5 flex-wrap" style="background-color: #D3D3D3; opacity: 0.9;">
+                <div class="col-lg-7 text-center">
+                    <h1 class="display-5 fw-italic">@tire.Name</h1>
+                    <h4 class="mb-3 mt-3">@tire.TireSize</h4>
+                    <h4 class="mb-3">Price: $@tire.ListPrice</h4>
+                    <h4 class="align-self-end">In Stock: <span class="fw-bold">@tire.Quantity</span></h4>
+                </div>
+                <div class="col-lg-5 d-flex align-items-center flex-column justify-content-center">
+                    <img class="img-fluid" style="" src="~/images/tire.png" alt="">
+                @{
+                    Tire selectedTire = new Tire();
+                    ViewBag.SKU = tire.SKU;
+                    ViewBag.Name = tire.Name;
+                    ViewBag.Location = tire.Location;
+                    ViewBag.ListPrice = tire.ListPrice;
+                    ViewBag.TireSize = tire.TireSize;
+                }
+                <partial name="_Add" model="@selectedTire"></partial>
+                </div>
+            </div>
+                }
+            }
+        } else{
+            <h1 style="left: 50%; position: relative;">No Tires in Stock</h1>
+        }
+</div>

@@ -1,0 +1,21 @@
+@model Tire
+
+<form asp-controller="Tires" asp-action="AddTire" class="">
+    <div class="">
+         <label asp-for="Quantity"></label>
+        <span
+        asp-validation-for="Quantity"
+        class="text-danger font-weight-bold"
+        ></span>
+        <input asp-for="Quantity" class="form-control" />
+    </div>
+    <input type="hidden" asp-for="TireSize" value="@ViewBag.TireSize">
+    <input type="hidden" asp-for="Name" value="@ViewBag.Name">
+    <input type="hidden" asp-for="SKU" value="@ViewBag.SKU">
+    <input type="hidden" asp-for="ListPrice" value="@ViewBag.ListPrice">
+    <input type="hidden" asp-for="Location" value="@ViewBag.Location">
+    <div class="text-center">
+        <button class="btn btn-success mt-3 w-100">Add</button>
+    </div>
+
+</form>

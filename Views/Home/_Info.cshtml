@@ -1,0 +1,12 @@
+@model Customer
+
+<div class="row">
+    <div class="col-lg-5 p-3 ">
+        <h3 class="fw-light"><span class="fw-bold">Customer Name:</span> @Model.FirstName @Model.LastName</h3>
+        <h3 class="fw-light"><span class="fw-bold">Phone:</span> @Model.Phone</h3>
+        <h3 class="fw-light"><span class="fw-bold">Email:</span> @Model.Email</h3>
+    </div>
+    <div class="col-lg-6 p-3 d-flex justify-content-end me-3">
+        <h1>Invoice #: @Context.Session.GetInt32("InvoiceNumber")</h1>
+    </div>
+</div>
