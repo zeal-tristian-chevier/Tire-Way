@@ -710,11 +710,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tchevier3/Desktop/Coding Dojo/C_Sharp/TireWay/TireWay.csproj",
+      "projectUniqueName": "/Users/tchevier3/Desktop/Projects/TireWay/TireWay.csproj",
       "projectName": "TireWay",
-      "projectPath": "/Users/tchevier3/Desktop/Coding Dojo/C_Sharp/TireWay/TireWay.csproj",
+      "projectPath": "/Users/tchevier3/Desktop/Projects/TireWay/TireWay.csproj",
       "packagesPath": "/Users/tchevier3/.nuget/packages/",
-      "outputPath": "/Users/tchevier3/Desktop/Coding Dojo/C_Sharp/TireWay/obj/",
+      "outputPath": "/Users/tchevier3/Desktop/Projects/TireWay/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/tchevier3/.nuget/NuGet/NuGet.Config"
